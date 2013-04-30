@@ -4,12 +4,12 @@
 #
 # This puzzle can be freely modified for your use.  Remember to give credit where applicable.
 
-def prompt()
+def prompt
   print "> "
 end
 
 #This is where the player reads the Note upon discovering the Bunker
-def start()
+def start
   puts <<MESSAGE
   You have stumbled upon an abandoned building overtaken by
   terrapi and automata.  They are guarding a chest nearby that
@@ -20,9 +20,9 @@ MESSAGE
   
   #There are two options. You can start the quest or flee.
   if next_move.downcase.include? "yes"
-   puzzle()
+   puzzle
    elsif #flee
-     angry_brain()
+     angry_brain
   end
       
 end
@@ -33,7 +33,7 @@ def finish(finish)
   exit
 end
 
-def puzzle()
+def puzzle
   puts <<MESSAGES
   Great! The next message reads:
   "There are two trap doors to open, so you need to
@@ -47,11 +47,11 @@ MESSAGES
   	
     puts "So, you drank the wine, but what was the word?"
 	
-	comeback()	
+	comeback	
 
 end
 
-def angry_brain()
+def angry_brain
 	puts "You encounter the brain who sensed your fear, \nHis tentacles are eager to smother you to death,\nso you better fight or flee!"
 	finish("You dropped the wine bottle.")
 end
@@ -78,7 +78,7 @@ def drink_wine()
 	# I just learned to write Ruby, so this is probably the wrong way to do it.
 end
 
-def comeback()
+def comeback
 		prompt; next_move=gets.chomp
  
 		if next_move.downcase.include? "begone" # & wine = 1
@@ -87,13 +87,13 @@ def comeback()
 		chest("Find the chest")
 		elsif
 		sleep 1 #seconds
-		try_again()
+		try_again
 		end
 end
 
-def try_again()
+def try_again
 	puts "Huh? That didn't work. Maybe you should drink\nthe wine and try again.."
-	comeback()
+	comeback
 end
 
 start()
